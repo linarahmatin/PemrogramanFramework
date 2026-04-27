@@ -4,9 +4,13 @@ import useSWR from "swr";
 import DetailProduk from "@/views/detailproduct";
 import { ProductType } from "@/types/product.type";
 
-const HalamanProduk = ({ product }: { product: ProductType }) => {
+const HalamanProduk = ({ product }: { product?: ProductType }) => {
   // digunakan client-side rendering
   // const Router = useRouter();...
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
