@@ -8,7 +8,7 @@ const halamanProdukServer = (props: { products: ProductType[] }) => {
       <h1 style={{ fontSize: '32px', fontWeight: 'bold', marginBottom: '20px' }}>
         Halaman Produk Server
       </h1>
-      <TampilanProduk produk={products} />
+      <TampilanProduk products={products} />
     </div>
   );
 };
@@ -18,7 +18,7 @@ export default halamanProdukServer;
 // Fungsi getServerSideProps akan dipanggil setiap kali halaman ini diakses, 
 // dan akan mengambil data produk dari API sebelum merender halaman.
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/produk");
+  const res = await fetch("fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/product");
   const respone = await res.json();
   
   // console.log("Data produk yang diambil dari API:", respone);

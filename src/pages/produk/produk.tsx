@@ -31,7 +31,7 @@ export default HalamanProduk;
 
 // digunakan static-site generation
 export async function getStaticPaths() {
-  const res = await fetch('http://localhost:3000/api/products');
+  const res = await fetch('fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/product');
   const response = await res.json();
 
   const paths = response.data.map((product: ProductType) => ({
@@ -46,16 +46,16 @@ export async function getStaticPaths() {
 }
 
 
-export async function getStaticProps({ params }: { params: { produk: string } }) {
-  const res = await fetch(`http://localhost:3000/api/produk/${params?.produk}`);
+// export async function getStaticProps({ params }: { params: { produk: string } }) {
+//   const res = await fetch(`http://localhost:3000/api/produk/${params?.produk}`);
   
-  // const response: ProductType[] = await res.json();
-  const response: { data: ProductType[] } = await res.json();
+//   // const response: ProductType[] = await res.json();
+//   const response: { data: ProductType[] } = await res.json();
 
-  // console.log("Data produk yang diambil dari API:", response);
-  return {
-    props: {
-      product: response.data,
-    }
-  };
-}
+//   // console.log("Data produk yang diambil dari API:", response);
+//   return {
+//     props: {
+//       product: response.data,
+//     }
+//   };
+// }
