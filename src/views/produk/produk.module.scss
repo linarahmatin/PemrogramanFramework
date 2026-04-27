@@ -1,0 +1,124 @@
+.produk {
+  max-width: 1200px; /* batasi lebar maksimal agar konten tidak terlalu melebar */
+  margin: 0 auto; /* pusatkan konten */
+  padding: 0 5%;
+
+  &__title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 32px;
+  }
+
+  &__content {
+    display: grid; /* pakai grid supaya responsif */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* kolom responsif */
+    gap: 20px;
+    justify-items: center; /* supaya item rata tengah */
+
+    /* Skeleton */
+    &__skeleton {
+      width: 100%; /* agar mengikuti grid kolom */
+      max-width: 200px;
+      padding: 16px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: shimmer 1.5s infinite linear;
+
+      &__image,
+      &__name,
+      &__category,
+      &__price {
+        border-radius: 4px;
+        background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+        background-size: 200% 100%;
+        margin-bottom: 8px;
+      }
+
+      &__image {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 12px;
+      }
+
+      &__name {
+        width: 80%;
+        height: 20px;
+      }
+
+      &__category {
+        width: 60%;
+        height: 16px;
+      }
+
+      &__price {
+        width: 40%;
+        height: 18px;
+      }
+    }
+
+    /* Produk nyata */
+    &__item {
+      width: 100%; /* ikut grid kolom */
+      max-width: 200px;
+      padding: 16px;
+      background: #fff;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 0.4s ease-in-out;
+      transition: transform 0.3s, box-shadow 0.3s;
+
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      }
+
+      &__image {
+        width: 100%;
+        height: 200px;
+        object-fit: contain; /* supaya gambar proporsional */
+        border-radius: 4px;
+        margin-bottom: 12px;
+      }
+
+      &__name {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        text-align: center; /* supaya teks rapi */
+      }
+
+      &__category {
+        font-size: 14px;
+        color: #888;
+        margin-bottom: 8px;
+        text-align: center;
+      }
+
+      &__price {
+        font-size: 16px;
+        font-weight: bold;
+        color: #ff5722;
+        text-align: center;
+      }
+    }
+  }
+}
+
+/* Animasi Skeleton Shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Animasi fade-in untuk produk nyata */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
