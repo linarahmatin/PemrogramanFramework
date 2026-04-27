@@ -12,13 +12,13 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   if (req.method === "POST") {
-    await signUp(req.body, (result: { status: string; message: string }) => {
-      if (result.status === "success") {
-        res.status(200).json({ name: result.message, alamat: "" });
-      } else {
-        res.status(400).json({ name: result.message, alamat: "" });
-      }
-    });
+await signUp(req.body, (result: { status: boolean; message: string }) => {
+  if (result.status) { // Cukup cek if(true)
+    res.status(200).json({ name: result.message, alamat: "" });
+  } else {
+    res.status(400).json({ status: false, message: result.message });
+  }
+});
   } else {
     res.status(405).json({ name: "Method not allowed", alamat: "" });
   }
