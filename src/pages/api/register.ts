@@ -3,8 +3,8 @@ import { signUp } from "@/utils/db/servicefirebase";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
-  name: string;
-  alamat: string;
+  name?: string;
+  alamat?: string;
   status?: boolean; // Tambahkan baris ini
   message?: string;
 };
