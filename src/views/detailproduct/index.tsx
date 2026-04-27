@@ -1,6 +1,6 @@
 // import { ProductType } from "@/types/Product.type";
 import { ProductType } from "../../types/product.type";
-import styles from "../detailProduct/detailProduct.module.scss";
+import styles from "../detailproduct/detailProduct.module.scss";
 import Image from "next/image";
 import { Montserrat } from "next/font/google";
 

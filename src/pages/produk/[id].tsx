@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { ProductType } from "../../types/product.type";
-import styles from "@/views/DetailProduct/detailProduct.module.scss";
+import styles from "@/views/detailproduct/detailProduct.module.scss";
 
 const DetailProduk = () => {
   const { query } = useRouter();
