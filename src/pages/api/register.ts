@@ -5,6 +5,8 @@ import type { NextApiRequest, NextApiResponse } from "next";
 type Data = {
   name: string;
   alamat: string;
+  status?: boolean; // Tambahkan baris ini
+  message?: string;
 };
 
 export default async function handler(
