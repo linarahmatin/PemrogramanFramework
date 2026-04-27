@@ -30,20 +30,20 @@ export default HalamanProduk;
 // }
 
 // digunakan static-site generation
-export async function getStaticPaths() {
-  const res = await fetch('fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/product');
-  const response = await res.json();
+// export async function getStaticPaths() {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/product`);
+//   const response = await res.json();
 
-  const paths = response.data.map((product: ProductType) => ({
-    params: { produk: product.id }
-  }));
+//   const paths = response.data.map((product: ProductType) => ({
+//     params: { produk: product.id }
+//   }));
 
-  // console.log("Paths yang dihasilkan untuk produk:", paths); // Debugging: Tampilkan paths yang dihasilkan
-  return {
-    paths,
-    fallback: false
-  };
-}
+//   // console.log("Paths yang dihasilkan untuk produk:", paths); // Debugging: Tampilkan paths yang dihasilkan
+//   return {
+//     paths,
+//     fallback: false
+//   };
+// }
 
 
 // export async function getStaticProps({ params }: { params: { produk: string } }) {
